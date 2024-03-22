@@ -15,9 +15,9 @@
             <!-- Contenedor principal -->
 
             <header>
-                <div class="logo">
+                <a href="./" class="logo">
                     <!-- Logo -->
-                </div>
+                </a>
                 <nav class="menu">
                     <ul>
                         <li><a href="./">Inicio</a></li>
@@ -29,10 +29,8 @@
 
             <!-- banner -->
             <div class="banner">
-                <div class="banner-container">
-                    <img src="./img/banner-bio.webp" alt="Imagen con imagen 1">
-                    <img src="imagen.jpg" alt="Imagen sin imagen 1">
-                    <img src="imagen.jpg" alt="Imagen sin imagen 2">
+                <div class="banner-container" id="banner">
+                    <!-- Imagenes del banner -->
                 </div>
                 <button class="prev" id="prev">&#10094;</button>
                 <button class="next" id="next">&#10095;</button>
@@ -77,8 +75,9 @@
         </div>
 
         <!-- JS -->
-        <script src="./js/main.js"></script>
-        <script src="./js/banner.js"></script>
+        <script src="./js/main.js" defer></script>
+        <script src="./js/imgBanner.js" defer></script>
+        <script src="./js/banner.js" defer></script>
     </body>
 
 </html>
