@@ -43,7 +43,7 @@ header {
 }
 
 .logo {
-    background-image: url("../img/logo-app-bio6.png");
+    background-image: url("../img/logo-app-bio.png");
     background-size: 100px;
     background-repeat: no-repeat;
     width: 100px;
@@ -146,7 +146,7 @@ footer h2 {
 }
 
 .logo-footer {
-    background-image: url("../img/logo-app-bio6.png");
+    background-image: url("../img/logo-app-bio.png");
     background-size: 110px;
     background-repeat: no-repeat;
     width: 160px;
