@@ -37,24 +37,20 @@ header {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 20px 0 20px 0;
+    padding: 5px 60px;
     background-color: var(--success);
     overflow: auto;
 }
 
 .logo {
-    margin-left: 100px;
-}
-
-.logo-img {
-    width: 150px;
+    background-image: url("../img/logo-app-bio6.png");
+    background-size: 100px;
+    background-repeat: no-repeat;
+    width: 100px;
+    height: 58px;
 }
 
 /* Estilos para el menu de navegación */
-
-.menu {
-    margin-right: 100px;
-}
 
 .menu ul {
     display: flex;
@@ -132,7 +128,7 @@ footer {
     align-items: center;
     width: 100%;
     height: 150px;
-    background-image: linear-gradient(to left, var(--secondary), var(--dark));
+    background-image: linear-gradient(to left, var(--dark), var(--secondary));
     color: var(--light);
 }
 
@@ -150,11 +146,11 @@ footer h2 {
 }
 
 .logo-footer {
-    background-image: url("../img/logo-app-bio.png");
-    background-size: 130px;
+    background-image: url("../img/logo-app-bio6.png");
+    background-size: 110px;
     background-repeat: no-repeat;
-    width: 130px;
-    height: 50px;
+    width: 160px;
+    height: 60px;
 }
 
 /* Mobil */
