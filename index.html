@@ -5,6 +5,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="./css/main.css">
+        <link rel="stylesheet" href="./css/banner.css">
         <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
         <title>App | Bio</title>
     </head>
@@ -14,9 +15,9 @@
             <!-- Contenedor principal -->
 
             <header>
-                <div class="logo">
+                <a href="./" class="logo">
                     <!-- Logo -->
-                </div>
+                </a>
                 <nav class="menu">
                     <ul>
                         <li><a href="./">Inicio</a></li>
@@ -28,8 +29,11 @@
 
             <!-- banner -->
             <div class="banner">
-                <div></div>
-                <!-- <img class="banner-img" src="./img/banner-bio.webp" alt="banner"> -->
+                <div class="banner-container" id="banner">
+                    <!-- Imagenes del banner -->
+                </div>
+                <button class="prev" id="prev">&#10094;</button>
+                <button class="next" id="next">&#10095;</button>
             </div>
             <main>
                 <section class="info">
@@ -71,7 +75,9 @@
         </div>
 
         <!-- JS -->
-        <script src="./js/main.js"></script>
+        <script src="./js/main.js" defer></script>
+        <script src="./js/imgBanner.js" defer></script>
+        <script src="./js/banner.js" defer></script>
     </body>
 
 </html>
