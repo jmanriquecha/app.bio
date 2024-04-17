@@ -2,12 +2,14 @@
 <html lang="es">
 
     <head>
+        {% block head %}
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="./css/main.css">
-        <link rel="stylesheet" href="./css/banner.css">
-        <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
-        <title>App | Bio</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/banner.css') }}">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/x-icon">
+        <title>{% block title %} App Bio | {% endblock %}</title>
+        {% endblock %}
     </head>
 
     <body>
@@ -15,6 +17,7 @@
             <!-- Contenedor principal -->
 
             <header>
+                {% block header%}
                 <a href="./" class="logo">
                     <!-- Logo -->
                 </a>
@@ -25,32 +28,28 @@
                         <li><a href="#">Contactenos</a></li>
                     </ul>
                 </nav>
+                {% endblock %}
             </header>
 
             <!-- banner -->
             <div class="banner">
+                {% block banner%}
                 <div class="banner-container" id="banner">
                     <!-- Imagenes del banner -->
                 </div>
                 <button class="prev" id="prev">&#10094;</button>
                 <button class="next" id="next">&#10095;</button>
+                {% endblock %}
             </div>
             <main>
                 <section class="info">
-                    <h1>Bienvenid@ a App Bio</h1>
-                    <h2>Explorando la Biodiversidad en Cundinamarca y Boyacá</h2>
-                    <br>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem dolorum nostrum aliquid maiores
-                        labore. Assumenda corrupti ab doloribus aspernatur voluptatum cumque animi excepturi nostrum
-                        itaque repellat! Saepe tenetur ea nihil?
-                        Iste obcaecati, eaque sapiente aliquid animi accusantium nostrum similique natus ipsa itaque
-                        facere.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae similique provident a, odio
-                        quam quisquam ex consectetur itaque totam numquam aut modi, dolorum magnam non unde temporibus
-                        aspernatur illo perspiciatis?</p>
+                    {% block info%}
+
+                    {% endblock %}
                 </section>
             </main>
             <footer>
+                {% block footer %}
                 <a href="./">
                     <div class="logo-footer"></div>
                 </a>
@@ -71,14 +70,15 @@
                             target="_blank">@jmanriquecha</a>
                     </div>
                 </section>
+                {% endblock %}
             </footer>
 
         </div>
 
         <!-- JS -->
-        <script src="./js/main.js" defer></script>
-        <script src="./js/imgBanner.js" defer></script>
-        <script src="./js/banner.js" defer></script>
+        <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+        <script src="{{ url_for('static', filename='js/imgBanner.js') }}" defer></script>
+        <script src="{{ url_for('static', filename='js/banner.js') }}" defer></script>
     </body>
 
 </html>

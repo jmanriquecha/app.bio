@@ -17,7 +17,7 @@ function showImagesBanner(images) {
     let show = '';
 
     for (let i = 0; i < images.length; i++) {
-        show += `<img src="./img/${images[i].ruta}" alt="${images[i].alt}" />`;
+        show += `<img src="../static/img/${images[i].ruta}" alt="${images[i].alt}" />`;
     }
 
     banner.innerHTML = show;
