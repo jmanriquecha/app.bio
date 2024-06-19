@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        {% block head %}
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/banner.css') }}">
+        <link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.png') }}" type="image/x-icon">
+        <title>{% block title %} App Bio | {% endblock %}</title>
+        {% endblock %}
+    </head>
+
+    <body>
+        <div class="containers w-100">
+            <!-- Contenedor principal -->
+
+            <header>
+                {% block header%}
+                <a href="./" class="logo">
+                    <!-- Logo -->
+                </a>
+                <nav class="menu">
+                    <ul>
+                        <li><a href="./">Inicio</a></li>
+                        <li><a href="/about">Acerca de</a></li>
+                        <li><a href="/contact">Contactenos</a></li>
+                    </ul>
+                </nav>
+                {% endblock %}
+            </header>
+
+            <!-- banner -->
+            {% block banner%}
+
+            {%endblock%}
+
+            <main>
+                <section class="info">
+                    {% block info%}
+
+                    {% endblock %}
+                </section>
+            </main>
+            <footer>
+                {% block footer %}
+                <a href="./">
+                    <div class="logo-footer"></div>
+                </a>
+                <section class="mapa">
+                    <h2>Mapa del sitio:</h2>
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="#">Acerca de</a></li>
+                        <li><a href="#">Contactenos</a></li>
+                    </ul>
+                </section>
+                <section>
+                    <div class="derechos">
+                        Todos los derechos reservados &copy 2024
+                    </div>
+                    <div class="powered-by">
+                        <span>powered by</span> <a href="https://github.com/jmanriquecha"
+                            target="_blank">@jmanriquecha</a>
+                    </div>
+                </section>
+                {% endblock %}
+            </footer>
+
+        </div>
+
+        <!-- JS -->
+        <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+        <script src="{{ url_for('static', filename='js/imgBanner.js') }}" defer></script>
+        <script src="{{ url_for('static', filename='js/banner.js') }}" defer></script>
+    </body>
+
+</html>

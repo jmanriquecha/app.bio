@@ -1,0 +1,60 @@
+{% extends 'layouts/app.html' %}
+
+{%block head %}
+{{ super() }}
+<link rel="stylesheet" href="{{url_for('static', filename='css/map.css')}}">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+<script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
+
+{% endblock %}
+
+{% block title %}
+{{ super() }}
+Página de inicio
+{% endblock %}
+
+
+{% block banner%}
+<div class="banner">
+    <div class="banner-container" id="banner">
+        <!-- Imagenes del banner -->
+    </div>
+    <button class="prev" id="prev">&#10094;</button>
+    <button class="next" id="next">&#10095;</button>
+</div>
+{% endblock %}
+
+{% block info%}
+<h1>Bienvenid@ a App Bio</h1>
+<h2>Explorando la Biodiversidad en Cundinamarca y Boyacá</h2>
+<br>
+<p>Cundinamarca es un departamento privilegiado en términos de biodiversidad. Alberga diversos paisajes que van desde
+    relieves bajos y planos hasta montañosos, por donde revolotean más de 900 especies de aves. También es un territorio
+    de agua, representado en páramos como Sumapaz (el más grande del mundo), Chingaza, Rabanal y Guerrero, y los cauces
+    de ríos como Magdalena, Bogotá, Negro y Apulo.</p>
+
+<p>En los páramos de Boyacá se han observado especies emblemáticas de Colombia como el frailejón y el oso andino. Más de
+    450 especies se encuentran reguladas, por ser objeto de comercio. Cerca del 30 % de las especies de mamíferos y
+    reptiles se encuentran en este departamento.</p>
+
+<div class="container-search">
+    <select name="departamento" id="departamento" class="search">
+        <option value="0">Seleccione un departamento...</option>
+        <option value="15">Boyacá</option>
+        <option value="25">Cundinamarca</option>
+    </select>
+    <select name="municipio" id="municipio" class="search">
+        <option value="0">Seleccione un municipio...</option>
+        <option value="15494">Nuevo Colón</option>
+    </select>
+</div>
+
+
+<div id="map"></div>
+<!-- Make sure you put this AFTER Leaflet's CSS -->
+<script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+<script defer type="module" src="{{url_for('static', filename='js/map.js')}}"></script>
+
+{% endblock %}
