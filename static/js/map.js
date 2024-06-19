@@ -64,7 +64,6 @@ function searchMunicipio() {
                 loadMunicipios(municipios[i], 'black');
                 L.geoJSON(puntosDeInteresGeoJSON, function () {
                 }).bindPopup(function (m) {
-                    console.log(m)
                     return `<p>${m.feature.properties.name}</p>
                     <a href="#">Información</a>`
                 }).addTo(map).openPopup();
