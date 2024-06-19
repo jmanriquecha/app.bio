@@ -11,5 +11,13 @@ def hello_world():
 def contact():
     return render_template("contact.html")
 
+@app.route("/about")
+def about():
+    return render_template('about.html')
+
+@app.route("/detail")
+def municipio():
+    return render_template('detail.html')
+
 if __name__ == "__main__":
     app.run(debug=True)

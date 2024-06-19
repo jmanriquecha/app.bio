@@ -13,7 +13,7 @@
     </head>
 
     <body>
-        <div class="container">
+        <div class="containers w-100">
             <!-- Contenedor principal -->
 
             <header>
@@ -24,23 +24,18 @@
                 <nav class="menu">
                     <ul>
                         <li><a href="./">Inicio</a></li>
-                        <li><a href="#">Acerca de</a></li>
-                        <li><a href="#">Contactenos</a></li>
+                        <li><a href="/about">Acerca de</a></li>
+                        <li><a href="/contact">Contactenos</a></li>
                     </ul>
                 </nav>
                 {% endblock %}
             </header>
 
             <!-- banner -->
-            <div class="banner">
-                {% block banner%}
-                <div class="banner-container" id="banner">
-                    <!-- Imagenes del banner -->
-                </div>
-                <button class="prev" id="prev">&#10094;</button>
-                <button class="next" id="next">&#10095;</button>
-                {% endblock %}
-            </div>
+            {% block banner%}
+
+            {%endblock%}
+
             <main>
                 <section class="info">
                     {% block info%}
