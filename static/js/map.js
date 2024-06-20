@@ -1,8 +1,7 @@
 import { departamentos } from "../coordinates/departamentos.js";
-import { nuevoColon } from "../coordinates/geoJSON/municipios/nuevoColon.js";
 import { municipios } from "../coordinates/municipios.js";
 
-let map = L.map('map',).setView([5.32, -73.49], 7,);
+let map = L.map('map',).setView([5.32, -73.49], 7);
 
 // Variable para controlar el estado de la tecla Ctrl
 var ctrlPressed = false;
@@ -35,7 +34,7 @@ let puntosDeInteresGeoJSON = {
     "features": [
         {
             "type": "Feature",
-            "properties": { name: nuevoColon.features[0].properties.name },
+            "properties": { name: municipios[0].features[0].properties.name },
             "geometry": {
                 "coordinates": [
                     -73.457299,
@@ -49,6 +48,7 @@ let puntosDeInteresGeoJSON = {
 
 let depa = document.getElementById('departamento');
 let muni = document.getElementById('municipio');
+muni.disabled = true; // deshabilitar select municipio
 
 depa.addEventListener('blur', searchDepartamento);
 muni.addEventListener('blur', searchMunicipio);
@@ -57,7 +57,8 @@ muni.addEventListener('blur', searchMunicipio);
 
 function searchMunicipio() {
     for (let i = 0; i < municipios.length; i++) {
-        const codMuni = parseInt(municipios[0].features[0].id);
+        const codMuni = parseInt(municipios[i].features[0].id);
+        const codDepa = parseInt(municipios[i].features[0].properties.dpt);
 
         setTimeout(() => {
             if (parseInt(muni.value) === codMuni) {
@@ -65,8 +66,11 @@ function searchMunicipio() {
                 L.geoJSON(puntosDeInteresGeoJSON, function () {
                 }).bindPopup(function (m) {
                     return `<p>${m.feature.properties.name}</p>
-                    <a href="#">Información</a>`
+                    <a href="/detail/${codDepa}/${codMuni}">Información</a>`
                 }).addTo(map).openPopup();
+                setTimeout(() => {
+                    cambiarZoom();
+                }, 500);
             }
         }, 520);
 
@@ -88,15 +92,19 @@ function loadMunicipios(municipio, color, fill = true) {
 
 // Buscar departamentos
 function searchDepartamento() {
+    muni.disabled = true;
     for (let i = 0; i < departamentos.length; i++) {
         const codDepa = parseInt(departamentos[i].features[0].properties.DeCodigo)
 
         setTimeout(() => {
             if (parseInt(depa.value) === codDepa) {
+                // Habilita select municipios
+                muni.disabled = false;
+
                 L.geoJSON(departamentos[i], {
                     color: 'blue',
                     fill: false
-                }).addTo(map)
+                }).addTo(map);
             }
         }, 520);
     }
@@ -114,3 +122,8 @@ function loadDepartamentos(departamento, color = 'none', fill = true) {
 }
 
 loadDepartamentos(departamentos);
+
+// Función para cambiar el zoom en el mapa
+function cambiarZoom() {
+    map.setView([5.354688, -73.457299], 12); // Cambiar el centro y zoom del mapa
+}
