@@ -1,1 +1,39 @@
 {% extends 'layouts/app.html' %}
+
+{%block head%}
+{{super()}}
+{%endblock%}
+
+{%block info%}
+<h1 class="text-left">Formulario de contacto</h1>
+
+<div class="subtitle">
+    <h2>Para nosotros es muy importante conocer su experiencia en nuestro sitio web</h2>
+</div>
+
+<div class="content">
+    <div class="content-form">
+        <form action="#" method="get">
+            <div class="row">
+                <label for="nombre">Nombre: </label>
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre..." required>
+            </div>
+            <div class="row">
+                <label for="apellido">Apellidos: </label>
+                <input type="text" id="apellido" name="apellido" placeholder="Apellido..." required>
+            </div>
+            <div class="row">
+                <label for="telefono">Teléfono: </label>
+                <input type="tel" id="telefono" name="telefono" placeholder="Teléfono..." required>
+            </div>
+            <div class="row">
+                <label for="email">Email: </label>
+                <input type="email" name="email" id="email" placeholder="Email..." required>
+            </div>
+            <div class="row">
+                <input class="submit" type="submit" value="Enviar">
+            </div>
+        </form>
+    </div>
+</div>
+{%endblock%}

@@ -3,8 +3,7 @@ from flask import Flask, render_template
 app = Flask(__name__)
 
 @app.route("/")
-def hello_world():
-    # return "<p>¡Hola, Mundo!</p>"
+def index():
     return render_template('index.html')
 
 @app.route("/contact")
@@ -15,9 +14,11 @@ def contact():
 def about():
     return render_template('about.html')
 
-@app.route("/detail")
-def municipio():
-    return render_template('detail.html')
+@app.route("/detail/<int:codDepa>/<int:codMuni>")
+def municipio(codDepa, codMuni):
+    id = codMuni
+    idDepa = codDepa
+    return render_template('detail.html', id = id, idDepa = idDepa)
 
 if __name__ == "__main__":
     app.run(debug=True)

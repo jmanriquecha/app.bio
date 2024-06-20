@@ -18,14 +18,14 @@
 
             <header>
                 {% block header%}
-                <a href="./" class="logo">
+                <a href="{{url_for('index')}}" class="logo">
                     <!-- Logo -->
                 </a>
                 <nav class="menu">
                     <ul>
-                        <li><a href="./">Inicio</a></li>
-                        <li><a href="/about">Acerca de</a></li>
-                        <li><a href="/contact">Contactenos</a></li>
+                        <li><a href="{{url_for('index')}}">Inicio</a></li>
+                        <li><a href="{{url_for('about')}}">Acerca de</a></li>
+                        <li><a href="{{url_for('contact')}}">Contactenos</a></li>
                     </ul>
                 </nav>
                 {% endblock %}
@@ -45,15 +45,15 @@
             </main>
             <footer>
                 {% block footer %}
-                <a href="./">
+                <a href="{{url_for('index')}}">
                     <div class="logo-footer"></div>
                 </a>
                 <section class="mapa">
                     <h2>Mapa del sitio:</h2>
                     <ul>
-                        <li><a href="#">Inicio</a></li>
-                        <li><a href="#">Acerca de</a></li>
-                        <li><a href="#">Contactenos</a></li>
+                        <li><a href="{{url_for('index')}}">Inicio</a></li>
+                        <li><a href="{{url_for('about')}}">Acerca de</a></li>
+                        <li><a href="{{url_for('contact')}}">Contactenos</a></li>
                     </ul>
                 </section>
                 <section>
@@ -72,8 +72,6 @@
 
         <!-- JS -->
         <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
-        <script src="{{ url_for('static', filename='js/imgBanner.js') }}" defer></script>
-        <script src="{{ url_for('static', filename='js/banner.js') }}" defer></script>
     </body>
 
 </html>
